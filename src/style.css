@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1c1c1c;
+  font-family: "Karla", sans-serif;
+}
+
+.container {
+  background-image: url("../public/images/back-image.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 650px;
+  min-height: 650px;
+  padding: 40px 74px;
+  color: #293264;
+}
+
+.container.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Starting Page CSS */
+.container.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container.start h4 {
+  margin-bottom: 10px;
+}
+
+.container.start p {
+  margin-bottom: 20px;
+}
+
+.container button {
+  background-color: #4d5b9e;
+  color: white;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  padding: 10px 60px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+.container button:hover {
+  background-color: #4d5b9e93;
+  border: #4d5b9e93 1px solid;
+  transform: scale(0.9, 0.9);
+}
+
+/* Game Page CSS */
+.container.game {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.container.game .question {
+  margin-bottom: 20px;
+  border-bottom: #dbdef0 1px solid;
+}
+
+.container.game.finished .question {
+  pointer-events: none;
+}
+
+.question h4 {
+  margin-bottom: 15px;
+}
+
+.question .options-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.options-container .option {
+  font-size: 12px;
+  border: 1px solid #4d5b9e;
+  border-radius: 100px;
+  padding: 3px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.options-container .option:hover {
+  background-color: #d6dbf580;
+}
+.options-container .option.selected {
+  background-color: #d6dbf5;
+  border-color: transparent;
+}
+.container.game.finished .options-container .option.correct {
+  background-color: #94d7a2;
+}
+.container.game.finished .options-container .option.incorrect {
+  background-color: #f8bcbc;
+}
+
+.container.game button {
+  width: auto;
+  align-self: center;
+}
+.container.game button:hover {
+  background-color: transparent;
+  color: #4d5b9e;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer.finished {
+  justify-content: right;
+}
